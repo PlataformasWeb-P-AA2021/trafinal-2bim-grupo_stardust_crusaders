@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Barrios
+{% endblock %}
+
+{% block content %}
+<h3>Número de Barrios: {{ numero_barrios }}</h3>
+
+
+{% for b in barrios %}
+  <ul>
+    <li><b>Propietario:</b> {{ b.nombre }}</li>
+    <ul>
+        <li><b>Barrio: </b> {{ b.siglas }}</li>
+    </ul>
+    [<a href="{% url 'editar_barrio' b.id %}">editar</a>] - 
+    [<a href="{% url 'eliminar_barrio' b.id %}" 
+    onclick="return confirm('¿Está seguro de la eliminación?')">eliminar</a>]</span>
+  </ul>
+<hr>
+{% endfor %}
+
+{% endblock %}

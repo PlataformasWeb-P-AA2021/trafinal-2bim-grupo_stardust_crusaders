@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Departamentos
+{% endblock %}
+
+{% block content %}
+<h3>Número de Departamentos: {{ numero_departamentos }}</h3>
+
+
+{% for d in departamentos %}
+  <ul>
+    <li><b>Propietario:</b> {{ d.propietario.nombres }} {{ d.propietario.apellidos }}</li>
+    <ul>
+        <li><b>Dirección: </b> {{ d.direccion }}</li>
+        <li><b>Barrio: </b> {{ d.barrio }}</li>
+        <li><b>Valor del Bien: </b> {{ d.valor_bien }}</li>
+        <li><b>Cuartos: </b> {{ d.cuartos }}</li>
+        <li><b>Valor Mensual: </b> {{ d.valor_mensual }}</li>
+    </ul>
+  </ul>
+<hr>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Personas
+{% endblock %}
+
+{% block content %}
+<h3>Número de personas {{ numero_personas }}</h3>
+
+<table id="tabla_datos">
+
+  <thead>
+    <tr>
+      <th>Propietario</th>
+      <th>Cedula</th>
+      <th>Correo</th>
+      <th>Casas </th>
+      <th>Departamentos </th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  {% for p in personas %}
+  <tr>
+    <td> {{p.nombres}} {{p.apellidos}}</td>
+    <td> {{p.cedula}}</td>
+    <td> {{p.correo}}</td>
+    <td>
+      <ul>
+        {% for c in p.casa_persona.all %}
+          <li>
+            <span>{{c.direccion}} - {{c.barrio}} - 
+              [<a href="{% url 'editar_casa' c.id %}">editar</a>] - 
+              [<a href="{% url 'eliminar_casa' c.id %}" 
+              onclick="return confirm('¿Está seguro de la eliminación?')">eliminar</a>] </span>
+          </li>
+        {% endfor %}
+      </ul>
+        [<a href="{% url 'crear_casa_persona' p.id%}">+Casa</a>]
+    </td>
+    <td>
+      <ul>
+        {% for d in p.departamento_persona.all %}
+          <li>
+            <span>{{d.direccion}} - {{d.barrio}} - 
+              [<a href="{% url 'editar_departamento' d.id %}">editar</a>] - 
+              [<a href="{% url 'eliminar_departamento' d.id %}"
+              onclick="return confirm('¿Está seguro de la eliminación?')">eliminar</a>]</span>
+          </li>
+        {% endfor %}
+      </ul>
+        [<a href="{% url 'crear_departamento_persona' p.id%}">+Departamento</a>]
+    </td>
+    <td>
+      <a href="{% url 'editar_persona' p.id %}">editar</a> <br>
+      <a href="{% url 'eliminar_persona' p.id %}"
+      onclick="return confirm('¿Está seguro de la eliminación?')" >
+      eliminar</a>
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
+{% endblock %}

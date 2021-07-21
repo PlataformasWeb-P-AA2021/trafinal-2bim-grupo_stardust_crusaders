@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Casas
+{% endblock %}
+
+{% block content %}
+<h3>Número de Casas: {{ numero_casas }}</h3>
+
+
+{% for c in casas %}
+  <ul>
+    <li><b>Propietario:</b> {{ c.propietario.nombres }} {{ c.propietario.apellidos }}</li>
+    <ul>
+        <li><b>Dirección: </b> {{ c.direccion }}</li>
+        <li><b>Barrio: </b> {{ c.barrio }}</li>
+        <li><b>Valor del Bien: </b> {{ c.valor }}</li>
+        <li><b>Color: </b> {{ c.color }}</li>
+        <li><b>Cuartos: </b> {{ c.cuartos }}</li>
+        <li><b>Pisos: </b> {{ c.pisos }}</li>
+    </ul>
+  </ul>
+<hr>
+{% endfor %}
+
+{% endblock %}

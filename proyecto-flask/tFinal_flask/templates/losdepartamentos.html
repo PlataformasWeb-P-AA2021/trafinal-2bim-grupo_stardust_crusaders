@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Departamentos</title>
+  </head>
+  <body>
+    <header>
+      <h1>Departamentos</h1>
+      <a href='http://127.0.0.1:5000/'>Inicio</a>
+      <a href='http://127.0.0.1:5000/laspersonas'>Personas</a>
+      <a href='http://127.0.0.1:5000/losbarrios'>Barrios</a>
+      <a href='http://127.0.0.1:5000/lascasas'>Casas</a>
+    </header>
+
+    <h5>Listado de departamentos - {{ numero }}</h5>
+    {% for d in datos %}
+
+    <ol>
+      <li><b>Propietario: </b>{{d['propietario']}}</li>
+      <li><b>Direccion: </b>{{d['direccion']}}</li>
+      <li><b>Barrio: </b>{{d['barrio']}}</li>
+      <li><b>Valor del Bien: </b>{{d['valor_bien']}}</li>
+      <li><b>Cuartos: </b>{{d['cuartos']}}</li>
+      <li><b>Valor Mensual: </b>{{d['valor_mensual']}}</li>
+    </ol>
+    <hr>
+    {% endfor%}
+  </body>
+</html>
