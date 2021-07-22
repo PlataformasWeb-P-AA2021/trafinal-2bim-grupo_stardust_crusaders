@@ -55,4 +55,31 @@
       - sudo service nginx restart
       - sudo service nginx status
 
+12. Crear el archivo **sites-available** de nginx.
+
+    - La ruta de acceso es: **/etc/nginx/sites-available/**. Se debe ingresar con permisos de administrador (sudo).
+    
+     - Para crear el archivo usamos el comando: **sudo touch /etc/nginx/sites-available/proyecto01**
+     
+     - La estrucura del archivo es la siguente:
+     
+     ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso12.jpeg)
+     
+13. Iniciar un enlace simbólico del archivo creado en el directorio sites-available. 
+
+      - **sudo ln -s /etc/nginx/sites-available/proyecto01 /etc/nginx/sites-enabled**
+
+14. Iniciar o reiniciar el servicio de nginx a traves de los comandos especificados en el paso 11
+
+
+      ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso14.jpeg)
+      
+15. Si todo marcha bien, en un navegador se debe deplegarara el proyecto a través de nginx: **http://0.0.0.0:81**
+
+
+      ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso15.jpeg)
+     
+
+
+
  
