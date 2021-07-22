@@ -25,9 +25,34 @@
    ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso5.jpeg)
 
 6. Terminar la ejecucion del servicio a traves de Ctrl+c
-7. En el directorio /etc/systemd/system/ agregar un archivo con la siguiente extension. (usar sudo para crearlo y editarlo)
-   El nombre del archivo serà proyecto01
-8. Iniciar y habilitar el proceso mediante los siguientes comandos
-9. Verificar que todo este correcto
-10. Verificar 
 
+7. En el directorio /etc/systemd/system/ agregar un archivo con la siguiente extension. (usar sudo para crearlo y editarlo)
+
+   El nombre del archivo serà **proyecto01.service**
+
+   ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso7.jpeg)
+
+8. Iniciar y habilitar el proceso mediante los siguientes comandos
+
+   - **sudo systemctl start proyecto01**
+   
+   - **sudo systemctl enable proyecto01**
+
+9. Verificar que todo este correcto mediante el comando: **sudo systemctl status proyecto01**
+
+   ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso9.jpeg)
+
+10. Verificar que el archivo **aplication.sock** esté creado en el directorio del proyecto. 
+
+      ![foo](https://github.com/PlataformasWeb-P-AA2021/trafinal-2bim-grupo_stardust_crusaders/blob/main/img/paso10.jpeg)
+ 
+11. Se asume que se encuentra instalado nginx, sino utilizamos el comando: **pip install nginx**
+
+   - Los comandos para iniciar, reiniciar, parar y verificar el servicio son:
+
+      - sudo service nginx start
+      - sudo service nginx stop
+      - sudo service nginx restart
+      - sudo service nginx status
+
+ 
